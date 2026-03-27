@@ -5,7 +5,8 @@ import { Magnetic } from '../components/Magnetic';
 
 export function Home() {
   const { t } = useTranslation();
-  const heroBackgroundSrc = "/hero-project-card.png";
+  const baseUrl = import.meta.env.BASE_URL;
+  const heroBackgroundSrc = `${baseUrl}hero-project-card.png`;
 
   return (
     <div className="animate-in fade-in duration-500 relative">
@@ -74,14 +75,11 @@ export function Home() {
             <div className="w-[95%] max-w-[560px] bg-surface text-ink brutal-border brutal-shadow overflow-hidden">
               <div className="relative bg-ink brutal-border-b">
                 <img
-                  src="/hero-project-card.png"
+                  src={heroBackgroundSrc}
                   alt="AI agent visual"
                   className="w-full aspect-[16/9] object-cover grayscale"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute top-3 left-3 bg-ink text-bg px-3 py-1.5 brutal-border border-bg/50 font-display text-xs tracking-widest">
-                  {t('home.projectCard.badge')}
-                </div>
               </div>
 
               <div className="p-5 md:p-6">
@@ -161,7 +159,7 @@ export function Home() {
             </h2>
             <div className="aspect-video brutal-border brutal-shadow relative overflow-hidden bg-ink">
               <img 
-                src="/shenzhen-city.png" 
+                src={`${baseUrl}shenzhen-city.png`} 
                 alt="Map" 
                 className="w-full h-full object-cover opacity-60"
                 referrerPolicy="no-referrer"

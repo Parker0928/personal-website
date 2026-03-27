@@ -7,6 +7,7 @@ import { ParallaxImage } from '../components/ParallaxImage';
 
 export function Contact() {
   const { t } = useTranslation();
+  const baseUrl = import.meta.env.BASE_URL;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('project');
@@ -161,7 +162,7 @@ export function Contact() {
           {/* Location */}
           <ScrollReveal delay={0.3} className="relative flex-grow min-h-[250px] bg-ink">
             <ParallaxImage 
-              src="/shenzhen-city.png" 
+              src={`${baseUrl}shenzhen-city.png`} 
               alt="Location" 
               className="absolute inset-0 opacity-50"
             />
